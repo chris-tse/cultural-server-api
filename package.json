@@ -1,0 +1,15 @@
+{
+    "name": "cultural-server-api",
+    "version": "1.0.0",
+    "description": "API served on the Cultural Server",
+    "keywords": [],
+    "author": "Chris Tse <chris@chris-tse.com>",
+    "license": "ISC",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+}
