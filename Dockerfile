@@ -1,16 +1,13 @@
-FROM node:18
+FROM node:18-alpine
 
-# Create app directory
+RUN npm i -g pnpm
+
 WORKDIR /usr/src/app
-
-# Install app dependencies
 COPY package.json ./
-COPY pnpm-lock.yaml ./
 RUN pnpm install
 
-# Bundle app source
 COPY . .
-
 EXPOSE 8080
 
 CMD [ "pnpm", "start" ]
+
