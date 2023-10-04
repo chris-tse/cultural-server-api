@@ -9,5 +9,6 @@ RUN pnpm install
 COPY . .
 EXPOSE 3000
 
+CMD ["pnpm", "migration:run"]
 CMD [ "pnpm", "start" ]
 

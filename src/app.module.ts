@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { DatabaseModule } from './database/database.module'
-import { SkillsController } from './skills/skills.controller'
 import { SkillsModule } from './skills/skills.module'
+import { SkillsController } from './skills/skills.controller'
 import { SkillsService } from './skills/skills.service'
 
 @Module({
@@ -16,7 +14,7 @@ import { SkillsService } from './skills/skills.service'
     DatabaseModule,
     SkillsModule,
   ],
-  controllers: [AppController, SkillsController],
-  providers: [AppService, SkillsService],
+  controllers: [SkillsController],
+  providers: [SkillsService],
 })
 export class AppModule {}

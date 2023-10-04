@@ -19,7 +19,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "docker:build": "docker build . -t chris-tse/cultural-server-api",
-    "docker:run": "docker run -p 3000:3000 chris-tse/cultural-server-api"
+    "docker:run": "docker run -p 3000:3000 chris-tse/cultural-server-api",
+    "migration:generate": "pnpm build && typeorm migration:generate -d dist/db/data-source.js",
+    "migration:run": "pnpm build && typeorm migration:run -d dist/db/data-source.js"
   },
   "engines": {
     "pnpm": "8.8.0"
