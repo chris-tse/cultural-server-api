@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common'
-import { CreateSkillDto } from './dto/create-skill.dto'
-import { UpdateSkillDto } from './dto/update-skill.dto'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Skill } from './entities/skill.entity'
 import { Repository } from 'typeorm'
@@ -11,23 +9,24 @@ export class SkillsService {
     @InjectRepository(Skill)
     private skillRepository: Repository<Skill>,
   ) {}
-  create(createSkillDto: CreateSkillDto) {
-    return 'This action adds a new skill'
-  }
 
   async findAll() {
     return await this.skillRepository.find()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} skill`
+  async findAllFrontend() {
+    return await this.skillRepository.find({ where: { category: 'Frontend' } })
   }
 
-  update(id: number, updateSkillDto: UpdateSkillDto) {
-    return `This action updates a #${id} skill`
+  async findAllBackend() {
+    return await this.skillRepository.find({ where: { category: 'Backend' } })
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} skill`
+  async findAllLanguages() {
+    return await this.skillRepository.find({ where: { category: 'Language' } })
+  }
+
+  async findAllDatabases() {
+    return await this.skillRepository.find({ where: { category: 'Database' } })
   }
 }

@@ -4,6 +4,9 @@ import { DatabaseModule } from './database/database.module'
 import { SkillsModule } from './skills/skills.module'
 import { SkillsController } from './skills/skills.controller'
 import { SkillsService } from './skills/skills.service'
+import { WorkHistoryModule } from './work-history/work-history.module'
+import { WorkHistoryController } from './work-history/work-history.controller'
+import { WorkHistoryService } from './work-history/work-history.service'
 
 @Module({
   imports: [
@@ -13,8 +16,9 @@ import { SkillsService } from './skills/skills.service'
     }),
     DatabaseModule,
     SkillsModule,
+    WorkHistoryModule,
   ],
-  controllers: [SkillsController],
-  providers: [SkillsService],
+  controllers: [SkillsController, WorkHistoryController],
+  providers: [SkillsService, WorkHistoryService],
 })
 export class AppModule {}
