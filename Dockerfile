@@ -1,4 +1,4 @@
-FROM node:18.18-alpine
+FROM node:20.10-alpine
 
 ARG NODE_ENV
 ARG DATABASE_HOST
