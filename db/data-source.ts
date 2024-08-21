@@ -11,9 +11,6 @@ export const dataSourceOptions: DataSourceOptions = {
   migrations: ['dist/db/migrations/*.js'],
 }
 
-console.log('db connection args')
-console.log(dataSourceOptions)
-
 const dataSource = new DataSource(dataSourceOptions)
 
 export default dataSource
