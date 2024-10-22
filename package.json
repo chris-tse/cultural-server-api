@@ -3,11 +3,16 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "lint": "eslint . --fix"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
-    "hono": "^4.6.5"
+    "@hono/zod-openapi": "^0.16.4",
+    "hono": "^4.6.5",
+    "hono-pino": "^0.4.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "stoker": "^1.2.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
